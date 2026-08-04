@@ -1,18 +1,27 @@
-# mcp-usda-fdc
+# @pipeworx/usda-fdc
 
-USDA Food Data Central MCP
+USDA Food Data Central MCP — comprehensive nutrient database for US foods (~600k items across SR Legacy, Foundation, Survey, Branded, Experimental data types).
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search_foods` | Search USDA FDC food items. |
-| `get_food` | Full food record by FDC id. |
-| `list_foods` | Paginated browse of FDC foods. |
-| `list_food_groups` | USDA food group reference (categories). |
-| `nutrients_for_food` | Convenience: nutrient values only for a food. |
+- `search_foods(query, data_type?, page_size?, page_number?, sort_by?, sort_order?, brand_owner?)`
+- `get_food(fdc_id, format?, nutrients?)` — single-food detail
+- `list_foods(data_type?, page_size?, page_number?, sort_by?, sort_order?)` — browse
+- `list_food_groups()` — USDA food group reference
+- `nutrients_for_food(fdc_id, nutrient_numbers?)` — convenience: just the nutrient values
+
+## Auth
+
+- **Platform key:** gateway env `PLATFORM_USDA_FDC_KEY`
+- **BYO:** `?_apiKey=<key>` after registering at https://api.data.gov/signup/
+
+Free tier: 1000 req/hour.
+
+## Data source
+
+`https://api.nal.usda.gov/fdc/v1/` — `api_key=` query param.
 
 ## Quick Start
 
@@ -28,7 +37,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -52,7 +61,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
