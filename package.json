@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-usda-fdc",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "USDA Food Data Central MCP",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-usda-fdc": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "usda-fdc"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-usda-fdc.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/usda-fdc",
   "pipeworx": {
-    "sourceHash": "v1-7522006b4796d8c74a50f1fa3eb9cb686b870c1def98d3d5a56021ad64edc79c",
-    "sourceCommit": "66a0692f029179984440cef6938cba7fdd41d66d"
+    "mode": "gateway",
+    "slug": "usda-fdc",
+    "gatewaySlug": "usda-fdc",
+    "sourceHash": "v1-1a55d5e6e7b11fe8f2dec161e31a8644ffae1a8f08ccb2e379173f59e391e885",
+    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
   }
 }
