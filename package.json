@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-usda-fdc",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "USDA Food Data Central MCP",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "usda-fdc",
     "gatewaySlug": "usda-fdc",
-    "sourceHash": "v1-1a55d5e6e7b11fe8f2dec161e31a8644ffae1a8f08ccb2e379173f59e391e885",
-    "sourceCommit": "98853f34516646cb7c4c1460f09249b262c0269e"
+    "sourceHash": "v1-cc783f86c1e5e31e65c159b3457305ce1a7dd3e1897ae9691a575be55af8181a",
+    "sourceCommit": "ca52e7ed1e1ccad897c2da1b0fa105edc0bc3b2e"
   }
 }
